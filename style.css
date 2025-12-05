@@ -1,0 +1,132 @@
+body {  
+    font-family: Arial, sans-serif;/*text font*/
+    background: #9b8361;/*color background*/
+}
+.resume-container {/**/
+    display: flex;/*تحوّل العنصر إلى حاوية Flexbox، مما يساعد في ترتيب العناصر داخلها بشكل أفقي أو رأسي بسهولة، مثل تقسيم السيرة الذاتية إلى عمودين.*/
+    width: 100%;/*تجعل عرض الحاوية يساوي 100% من عرض الصفحة أو من العنصر الموجود بداخلها.*/
+    max-width: 1100px;/*تحدد أقصى عرض للحاوية وهو 1100 بكسل، حتى لا تصبح عريضة جدًا على الشاشات الكبيرة.*/
+    margin: 20px auto;/*تجعل هناك مسافة 20px من الأعلى والأسفل.
+كلمة auto تجعل الحاوية متمركزة ngangيًا (في المنتصف).*/
+    background: #fff;/*color*/
+    border-radius: 10px;/*تجعل حواف الحاوية مستديرة بشكل خفيف (زاويا ناعمة).*/
+    background-color: #ffffff;
+    border: 2px solid #222;
+    overflow: hidden;/*تمنع أي محتوى داخلي من الخروج خارج حدود الحاوية—يفيد عند استخدام خلفيات أو صور داخل أقسام السيرة الذاتية.*/
+}
+.sidebar {/*sidebar*/
+    width: 30%;
+    background: #eee4d1;
+    padding: 30px;
+    color: #523030;
+}
+.sidebar h1 {/*h1*/
+    text-align: center;
+    border: 2px solid #523030;
+    border-radius: 40px;
+    padding: 10px;
+    margin-top: 20px;
+}
+h1:hover{
+    border: 12px solid #523030;
+    transition: 1.0s;
+    transform: rotateY(360deg);
+  /*  transform: translatex(100px);*/
+
+}
+.job-title {/*h2*/
+    text-align: center;
+    margin-top: 10px;
+}
+img {/*profile image*/  
+    width: 50%;
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+    border: 2px solid #523030;
+}
+.sidebar h3 {/*h3*/
+    margin-top: 25px;
+    border: 1px solid #523030;
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    background: rgba(119, 67, 41, 0.647);
+}
+.sidebar ul {/*unordered list*/
+    padding-left: 20px;
+    margin-top: 10px;
+}
+.sidebar li {/*list items*/
+    margin-bottom: 10px;
+    color: #523030;
+}
+
+.sidebar hr {/*line*/
+    border: 1px solid #523030;
+    margin: 20px 0;
+}
+.content {/*main content*/
+    width: 70%;
+    padding: 40px;
+    background: #d3b07f;
+}
+.content section {/*sections inside main content*/
+    margin-bottom: 40px;/*space between sections*/
+}
+.content h2 {/*h2*/
+    border: 1px solid #523030;
+    background: rgba(119, 67, 41, 0.647);
+    border-radius: 20px;
+    padding: 5px 20px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.editable-box {/*editable boxes*/
+    min-height: 80px;
+    padding: 10px;
+    border: 1px solid #523030;
+    border-radius: 5px;
+    background: #f4f0e7;
+}
+table {/*table*/
+    width: 100%;
+    border: 1px solid #523030;
+    border-radius: 5px;
+    background: #f4f0e7;
+}
+.editable{
+    border: 1px solid #523030;
+    border-radius: 5px;
+    background: #f4f0e7;
+}
+.editable1{
+    border: 1px solid #523030;
+    border-radius: 5px;
+    background: #f4f0e7;
+    min-height: 100px;
+}
+/*عنصر section في HTML يُستخدم لإنشاء قسم مستقل داخل الصفحة يحتوي على محتوى له موضوع واحد أو فكرة واضحة//*/
+p.print{
+    text-align: right;
+}
+button{
+    font-size: 18px;
+}
+#preview {
+  width: 150px;
+  height: 150px;
+  object-fit: cover; /* مهم! */
+  border-radius: 50%;
+  margin:0 60px;
+}
+@media print {
+  #printBtn {
+    display: none; /* يخفي الزر عند الطباعة */
+  }
+}
+* {
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+ 

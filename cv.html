@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV</title>
+</head>
+<body>
+  <div class="resume-container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <style>
+  /* إخفاء زر اختيار الملف بالكامل */
+  #fileInput {
+    display: none;
+  }
+
+  /* جعل الصورة قابلة للنقر */
+  #uploadLabel {
+    cursor: pointer;
+    display: inline-block;
+  }
+</style>
+
+<!-- الصورة التي سيتم النقر عليها -->
+<!-- عند الضغط عليها تفتح نافذة اختيار الصورة -->
+<label for="fileInput" id="uploadLabel">
+  <img id="preview" src="download.jpg" >
+</label>
+
+<!-- مدخل الملف (مخفي) -->
+<input type="file" id="fileInput" accept="image/*">
+
+<script>
+  const img = document.getElementById('preview');
+  const fileInput = document.getElementById('fileInput');
+
+  const preview = document.getElementById('preview');
+
+  // Load saved image on page load
+  const savedImage = localStorage.getItem("savedImage");
+  if (savedImage) {
+    preview.src = savedImage;
+  }
+
+  // When file is chosen
+  document.getElementById('fileInput').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const imgData = e.target.result;
+
+        // Show preview
+        preview.src = imgData;
+
+        // Save to localStorage
+        localStorage.setItem("savedImage", imgData);
+      };
+      reader.readAsDataURL(file);
+    }
+    
+  });
+</script>
+        
+
+        <h1>Israa Lafi<br>Sharbel Jadoun</h1>
+        <h3 >Name</h3>
+        <ul>
+            <li><div id="name" contenteditable="true" class="editable"></div></li>
+        </ul>
+
+       <h3 >University Major</h3>
+        <ul>
+            <li>Major: <div id="major" contenteditable="true" class="editable"></div></li>
+        </ul>
+
+        <hr>
+      <details>
+        <summary><h3>Contacts</h3></summary>
+        <ul>
+            <li>Phone: <div id="phone" contenteditable="true" class="editable"></div></li>
+            <li>Email: <div id="email" contenteditable="true" class="editable"></div></li>
+            <li>Location: <div id="location" contenteditable="true" class="editable"></div></li>
+        </ul>
+        </details>
+        <hr>
+
+        <h3>Skills</h3>
+        <div id="skills" contenteditable="true" class="editable1"></div>
+    </aside>
+    <main class="content">
+
+        <section>
+            <h2>Education</h2>
+            <div id="education" contenteditable="true" class="editable-box"></div>
+        </section>
+
+        <section>
+            <h2>Languages</h2>
+            <div id="languages" contenteditable="true" class="editable-box"></div>
+        </section>
+
+        <section>
+            <h2>Experience</h2>
+              <div id="Experience" contenteditable="true" class="editable-box"></div>
+        </section>
+
+        <section>
+            <h2>Planning</h2>
+            <div id="planning" contenteditable="true" class="editable-box"></div>
+        </section>
+        <p class="print"><button id="printBtn" onclick="window.print()">Print</button></p>
+        
+    </main>
+
+</div>
+
+<script>
+function saveEditor(id) {
+    const el = document.getElementById(id);
+    el.innerHTML = localStorage.getItem(id) || "";
+    el.addEventListener("input", () => {
+        localStorage.setItem(id, el.innerHTML);
+    });
+}
+//
+// Fields to auto-save
+["phone","email","location","education","languages","planning","Experience","job","fileInput"].forEach(saveEditor);
+</script>
+<script>
+function saveEditor(id) {
+    const el = document.getElementById(id);
+    el.innerHTML = localStorage.getItem(id) || "";
+    el.addEventListener("input", () => {
+        localStorage.setItem(id, el.innerHTML);
+    });
+}
+//
+// Fields to auto-save
+["name","major","skills"].forEach(saveEditor);
+</script>
+</body>
+</html>
